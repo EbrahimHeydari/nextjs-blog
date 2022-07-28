@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
+import { Button } from 'reactstrap'
 
 const name = 'Ebrahim Heydari'
 export const siteTitle = 'My Blog'
@@ -32,7 +33,6 @@ export default function Layout({ children, home }) {
         ) : (
           <>
             <Link href="/">
-              <a>
                 <Image
                   priority
                   src="/images/profile.jpg"
@@ -41,7 +41,6 @@ export default function Layout({ children, home }) {
                   width={108}
                   alt={name}
                 />
-              </a>
             </Link>
             <h2 className={utilStyles.headingLg}>
               <Link href="/">
@@ -55,7 +54,7 @@ export default function Layout({ children, home }) {
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
-            <a>← Back to home</a>
+            <Button color='primary'>← Back to home</Button>
           </Link>
         </div>
       )}
